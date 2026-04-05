@@ -1,0 +1,35 @@
+# 27. Remove Element
+# Difficulty: Easy
+# URL: https://leetcode.com/problems/remove-element/submissions/1969328099/
+# Date: 05/04/2026
+
+# ========== Solution A ==========
+# Language: txt
+# Date: 05/04/2026
+
+class Solution {class Solution {
+    public int removeElement(int[] nums, int val) {    public int removeElement(int[] nums, int val) {
+        // start pointer        // start pointer
+        // jump pointer        // jump pointer
+        int startPointer = 0;        int startPointer = 0;
+        int jumpPointer = 0;        int jumpPointer = 0;
+        int count = 0;        int count = 0;
+        for(;startPointer<=nums.length-1;startPointer++){        for(;startPointer<=nums.length-1;startPointer++){
+            boolean noMoreNonVal = false;            boolean noMoreNonVal = false;
+            jumpPointer = startPointer;            jumpPointer = startPointer;
+            if(nums[startPointer]==val){            if(nums[startPointer]==val){
+                //search for the first non-val                //search for the first non-val
+                while(nums[jumpPointer]==val) {                while(nums[jumpPointer]==val) {
+                    //reached the end                    //reached the end
+                    if(jumpPointer==nums.length-1){                    if(jumpPointer==nums.length-1){
+                        noMoreNonVal = true;                        noMoreNonVal = true;
+                        break;                        break;
+                    }                    }
+
+                    jumpPointer++;                    jumpPointer++;
+                }                }
+                if(noMoreNonVal) break;                if(noMoreNonVal) break;
+                //swap                //swap
+                int tmp = nums[jumpPointer];                int tmp = nums[jumpPointer];
+
+
