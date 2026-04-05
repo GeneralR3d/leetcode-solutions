@@ -1,0 +1,35 @@
+# 303. Range Sum Query - Immutable
+# Difficulty: Easy
+# URL: https://leetcode.com/problems/range-sum-query-immutable/description/
+# Date: 05/04/2026
+
+# ========== Solution A ==========
+# Language: txt
+# Date: 05/04/2026
+
+class NumArray {class NumArray {
+    // use ArrayList instead     // use ArrayList instead 
+    //int[] sumArray = new int[]    //int[] sumArray = new int[]
+    ArrayList<Integer> sumArray = new ArrayList<>();    ArrayList<Integer> sumArray = new ArrayList<>();
+
+
+    public NumArray(int[] nums) {    public NumArray(int[] nums) {
+        int sum = 0;        int sum = 0;
+        for(int i=0;i<nums.length;i++){        for(int i=0;i<nums.length;i++){
+            int finalNum = nums[i] + sum;            int finalNum = nums[i] + sum;
+            sumArray.add(finalNum);            sumArray.add(finalNum);
+            sum+=nums[i];            sum+=nums[i];
+        }        }
+                
+    }    }
+        
+    public int sumRange(int left, int right) {    public int sumRange(int left, int right) {
+
+        if (left == 0) return this.sumArray.get(right);        if (left == 0) return this.sumArray.get(right);
+        else return this.sumArray.get(right) - this.sumArray.get(left-1);        else return this.sumArray.get(right) - this.sumArray.get(left-1);
+    }    }
+}}
+
+/**/**
+
+
