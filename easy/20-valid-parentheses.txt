@@ -1,0 +1,35 @@
+# 20. Valid Parentheses
+# Difficulty: Easy
+# URL: https://leetcode.com/problems/valid-parentheses/description/
+# Date: 05/04/2026
+
+# ========== Solution A ==========
+# Language: txt
+# Date: 05/04/2026
+
+class Solution {class Solution {
+    public boolean isValid(String s) {    public boolean isValid(String s) {
+        char[] chars = s.toCharArray();        char[] chars = s.toCharArray();
+        //create a stack        //create a stack
+        ArrayList<Character> stack = new ArrayList<>();        ArrayList<Character> stack = new ArrayList<>();
+        HashSet<Character> opening = new HashSet<>();        HashSet<Character> opening = new HashSet<>();
+        opening.add('(');        opening.add('(');
+        opening.add('[');        opening.add('[');
+        opening.add('{');        opening.add('{');
+
+        HashSet<Character> closing = new HashSet<>();        HashSet<Character> closing = new HashSet<>();
+        closing.add(')');        closing.add(')');
+        closing.add(']');        closing.add(']');
+        closing.add('}');        closing.add('}');
+
+        //add hash map to map closing to opening, only closing needs to check opening        //add hash map to map closing to opening, only closing needs to check opening
+        HashMap<Character, Character> map = new HashMap<>();        HashMap<Character, Character> map = new HashMap<>();
+        map.put(')','(');        map.put(')','(');
+        map.put(']','[');        map.put(']','[');
+        map.put('}','{');        map.put('}','{');
+
+
+
+        for(int i =0;i<chars.length;i++){        for(int i =0;i<chars.length;i++){
+
+
