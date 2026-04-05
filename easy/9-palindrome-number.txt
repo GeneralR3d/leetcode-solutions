@@ -1,0 +1,35 @@
+# 9. Palindrome Number
+# Difficulty: Easy
+# URL: https://leetcode.com/problems/palindrome-number/submissions/1969326570/
+# Date: 05/04/2026
+
+# ========== Solution A ==========
+# Language: txt
+# Date: 05/04/2026
+
+class Solution {class Solution {
+    public boolean isPalindrome(int x) {    public boolean isPalindrome(int x) {
+
+        //straightaway reject all negative numbers, negative numbers cannot be pallindrome        //straightaway reject all negative numbers, negative numbers cannot be pallindrome
+        if (x <0) return false;        if (x <0) return false;
+        // break any number down to its digits one by one        // break any number down to its digits one by one
+
+        ArrayList<Integer> number = new ArrayList<>();        ArrayList<Integer> number = new ArrayList<>();
+        while(x>0){        while(x>0){
+            number.add(x %10);            number.add(x %10);
+            x /= 10;            x /= 10;
+        }        }
+
+        // init pointers        // init pointers
+        int left = 0;        int left = 0;
+        int right = number.size() - 1;        int right = number.size() - 1;
+
+        while (left< right){        while (left< right){
+            //ignore the middle number if there is. This case will not happen             //ignore the middle number if there is. This case will not happen 
+            // if theres even number of digits            // if theres even number of digits
+            if(left == right) continue;            if(left == right) continue;
+
+            if(number.get(left) != number.get(right)) return false;            if(number.get(left) != number.get(right)) return false;
+
+
+
