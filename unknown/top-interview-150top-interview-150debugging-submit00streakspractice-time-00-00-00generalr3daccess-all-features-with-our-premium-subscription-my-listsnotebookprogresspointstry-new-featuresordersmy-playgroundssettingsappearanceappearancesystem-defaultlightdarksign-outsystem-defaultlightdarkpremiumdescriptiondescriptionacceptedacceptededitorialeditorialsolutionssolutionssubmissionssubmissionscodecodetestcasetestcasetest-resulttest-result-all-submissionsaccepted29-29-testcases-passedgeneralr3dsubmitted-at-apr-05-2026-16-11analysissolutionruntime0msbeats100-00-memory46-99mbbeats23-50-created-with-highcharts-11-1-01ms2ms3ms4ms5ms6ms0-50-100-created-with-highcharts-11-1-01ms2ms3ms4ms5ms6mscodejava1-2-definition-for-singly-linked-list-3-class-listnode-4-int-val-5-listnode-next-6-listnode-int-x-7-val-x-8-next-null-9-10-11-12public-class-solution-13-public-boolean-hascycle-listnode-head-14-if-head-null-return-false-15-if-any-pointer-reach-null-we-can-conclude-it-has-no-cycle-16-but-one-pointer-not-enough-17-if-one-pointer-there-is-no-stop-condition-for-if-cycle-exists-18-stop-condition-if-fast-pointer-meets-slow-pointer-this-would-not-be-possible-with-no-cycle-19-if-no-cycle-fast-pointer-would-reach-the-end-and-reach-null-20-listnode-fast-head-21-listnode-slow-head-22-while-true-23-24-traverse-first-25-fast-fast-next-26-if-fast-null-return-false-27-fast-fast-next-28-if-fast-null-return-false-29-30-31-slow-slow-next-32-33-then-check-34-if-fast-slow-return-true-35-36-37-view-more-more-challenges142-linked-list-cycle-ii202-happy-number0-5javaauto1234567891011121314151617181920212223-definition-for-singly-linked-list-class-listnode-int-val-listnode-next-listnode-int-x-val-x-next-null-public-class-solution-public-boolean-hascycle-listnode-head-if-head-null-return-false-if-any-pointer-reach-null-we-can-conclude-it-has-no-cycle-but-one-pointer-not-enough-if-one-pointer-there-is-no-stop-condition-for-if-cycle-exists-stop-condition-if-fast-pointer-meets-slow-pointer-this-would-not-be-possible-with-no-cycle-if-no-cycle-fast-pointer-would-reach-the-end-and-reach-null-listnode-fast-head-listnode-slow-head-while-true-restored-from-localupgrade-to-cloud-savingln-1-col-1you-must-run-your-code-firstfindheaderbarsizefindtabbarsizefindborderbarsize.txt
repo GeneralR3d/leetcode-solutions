@@ -1,0 +1,73 @@
+# Top Interview 150Top Interview 150Debugging...Submit00StreaksPractice Time!00:00:00generalr3dAccess all features with our Premium subscription!My ListsNotebookProgressPointsTry New FeaturesOrdersMy PlaygroundsSettingsAppearanceAppearanceSystem DefaultLightDarkSign OutSystem DefaultLightDarkPremiumDescriptionDescriptionAcceptedAcceptedEditorialEditorialSolutionsSolutionsSubmissionsSubmissionsCodeCodeTestcaseTestcaseTest ResultTest Result All SubmissionsAccepted29 / 29 testcases passedgeneralr3dsubmitted at Apr 05, 2026 16:11AnalysisSolutionRuntime0msBeats100.00%Memory46.99MBBeats23.50%Created with Highcharts 11.1.01ms2ms3ms4ms5ms6ms0%50%100%
+                  
+                Created with Highcharts 11.1.01ms2ms3ms4ms5ms6msCodeJava1/**
+2 * Definition for singly-linked list.
+3 * class ListNode {
+4 *     int val;
+5 *     ListNode next;
+6 *     ListNode(int x) {
+7 *         val = x;
+8 *         next = null;
+9 *     }
+10 * }
+11 */
+12public class Solution {
+13    public boolean hasCycle(ListNode head) {
+14        if(head == null) return false;
+15        // if any pointer reach null we can conclude it has no cycle
+16        // but one pointer not enough
+17        // if one pointer there is no stop condition for if cycle exists
+18        // stop condition: if fast pointer meets slow pointer, this would not be possible with no cycle
+19        // if no cycle, fast pointer would reach the end and reach null
+20        ListNode fast = head;
+21        ListNode slow = head;
+22        while(true){
+23
+24            // traverse first 
+25            fast = fast.next;
+26            if(fast == null) return false;
+27            fast = fast.next;
+28            if(fast == null) return false;
+29
+30
+31            slow = slow.next;
+32
+33            // then check
+34            if(fast==slow) return true;
+35        }
+36    }
+37}View more More challenges142. Linked List Cycle II202. Happy Number0/5JavaAuto1234567891011121314151617181920212223/** * Definition for singly-linked list. * class ListNode { *     int val; *     ListNode next; *     ListNode(int x) { *         val = x; *         next = null; *     } * } */public class Solution {    public boolean hasCycle(ListNode head) {        if(head == null) return false;        // if any pointer reach null we can conclude it has no cycle        // but one pointer not enough        // if one pointer there is no stop condition for if cycle exists        // stop condition: if fast pointer meets slow pointer, this would not be possible with no cycle        // if no cycle, fast pointer would reach the end and reach null        ListNode fast = head;        ListNode slow = head;        while(true){Restored from localUpgrade to Cloud SavingLn 1, Col 1You must run your code firstFindHeaderBarSizeFindTabBarSizeFindBorderBarSize
+# Difficulty: Unknown
+# URL: https://leetcode.com/problems/linked-list-cycle/submissions/1969427708/
+# Date: 05/04/2026
+
+# ========== Solution A ==========
+# Language: txt
+# Date: 05/04/2026
+
+/**/**
+ * Definition for singly-linked list. * Definition for singly-linked list.
+ * class ListNode { * class ListNode {
+ *     int val; *     int val;
+ *     ListNode next; *     ListNode next;
+ *     ListNode(int x) { *     ListNode(int x) {
+ *         val = x; *         val = x;
+ *         next = null; *         next = null;
+ *     } *     }
+ * } * }
+ */ */
+public class Solution {public class Solution {
+    public boolean hasCycle(ListNode head) {    public boolean hasCycle(ListNode head) {
+        if(head == null) return false;        if(head == null) return false;
+        // if any pointer reach null we can conclude it has no cycle        // if any pointer reach null we can conclude it has no cycle
+        // but one pointer not enough        // but one pointer not enough
+        // if one pointer there is no stop condition for if cycle exists        // if one pointer there is no stop condition for if cycle exists
+        // stop condition: if fast pointer meets slow pointer, this would not be possible         // stop condition: if fast pointer meets slow pointer, this would not be possible 
+with no cyclewith no cycle
+        // if no cycle, fast pointer would reach the end and reach null        // if no cycle, fast pointer would reach the end and reach null
+        ListNode fast = head;        ListNode fast = head;
+        ListNode slow = head;        ListNode slow = head;
+        while(true){        while(true){
+
+
+
