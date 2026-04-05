@@ -1,0 +1,35 @@
+# 28. Find the Index of the First Occurrence in a String
+# Difficulty: Easy
+# URL: https://leetcode.com/problems/find-the-index-of-the-first-occurrence-in-a-string/submissions/1969328226/
+# Date: 05/04/2026
+
+# ========== Solution A ==========
+# Language: txt
+# Date: 05/04/2026
+
+class Solution {class Solution {
+    public int strStr(String haystack, String needle) {    public int strStr(String haystack, String needle) {
+        // turn both into char Arrays        // turn both into char Arrays
+        // 2 nested for loops        // 2 nested for loops
+        char[] hay = haystack.toCharArray();        char[] hay = haystack.toCharArray();
+        char[] need = needle.toCharArray();        char[] need = needle.toCharArray();
+
+        // just return impossible if needle is longer than haystack        // just return impossible if needle is longer than haystack
+        if(need.length > hay.length) return -1;        if(need.length > hay.length) return -1;
+
+        for(int i =0;i<hay.length;i++){        for(int i =0;i<hay.length;i++){
+            boolean match = false;            boolean match = false;
+            for(int j =0, k = i;j<need.length;j++, k++){            for(int j =0, k = i;j<need.length;j++, k++){
+                if(k>=hay.length) return -1;                if(k>=hay.length) return -1;
+                if(need[j]==hay[k]){                if(need[j]==hay[k]){
+                    match = true;                    match = true;
+                }                }
+                else{                else{
+                    match= false;                    match= false;
+                    break;                    break;
+                }                }
+
+            }            }
+            if(match==true) return i;            if(match==true) return i;
+
+
