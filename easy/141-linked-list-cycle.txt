@@ -1,0 +1,34 @@
+# 141. Linked List Cycle
+# Difficulty: Easy
+# URL: https://leetcode.com/problems/linked-list-cycle/submissions/1969426995/
+# Date: 05/04/2026
+
+# ========== Solution A ==========
+# Language: txt
+# Date: 05/04/2026
+
+        // but one pointer not enough        // but one pointer not enough
+        // if one pointer there is no stop condition for if cycle exists        // if one pointer there is no stop condition for if cycle exists
+        // stop condition: if fast pointer meets slow pointer, this would not be possible         // stop condition: if fast pointer meets slow pointer, this would not be possible 
+with no cyclewith no cycle
+        // if no cycle, fast pointer would reach the end and reach null        // if no cycle, fast pointer would reach the end and reach null
+        ListNode fast = head;        ListNode fast = head;
+        ListNode slow = head;        ListNode slow = head;
+        while(true){        while(true){
+            fast = fast.next;            fast = fast.next;
+            slow = slow.next;            slow = slow.next;
+
+            // traverse first             // traverse first 
+
+            // then check            // then check
+            if(fast == null) return false;            if(fast == null) return false;
+
+            fast = fast.next;            fast = fast.next;
+            if(fast == null) return false;            if(fast == null) return false;
+
+            if(fast==slow) return true;            if(fast==slow) return true;
+        }        }
+    }    }
+}}
+
+
