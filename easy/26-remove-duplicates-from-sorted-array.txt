@@ -1,0 +1,35 @@
+# 26. Remove Duplicates from Sorted Array
+# Difficulty: Easy
+# URL: https://leetcode.com/problems/remove-duplicates-from-sorted-array/submissions/1969327688/
+# Date: 05/04/2026
+
+# ========== Solution A ==========
+# Language: txt
+# Date: 05/04/2026
+
+class Solution {class Solution {
+    public int removeDuplicates(int[] nums) {    public int removeDuplicates(int[] nums) {
+
+        //all the duplicates will be together        //all the duplicates will be together
+        //go through once, do a count of everything, store count in hashmap        //go through once, do a count of everything, store count in hashmap
+        //start pointer = 0        //start pointer = 0
+        //pointer to replace = 0        //pointer to replace = 0
+        HashMap<Integer,Integer> mapCount = new HashMap<>();        HashMap<Integer,Integer> mapCount = new HashMap<>();
+        int startPointer = 0;        int startPointer = 0;
+        int jumpPointer = 0;        int jumpPointer = 0;
+
+        for(int i =0;i<nums.length;i++){        for(int i =0;i<nums.length;i++){
+            if(mapCount.containsKey(nums[i])){            if(mapCount.containsKey(nums[i])){
+                int old =mapCount.get(nums[i]);                int old =mapCount.get(nums[i]);
+                mapCount.put(nums[i],++old);                mapCount.put(nums[i],++old);
+            }            }
+            else{            else{
+                mapCount.put(nums[i],1);                mapCount.put(nums[i],1);
+            }            }
+        }        }
+
+
+        // start from start, look in hashmap for count of char at start pointer        // start from start, look in hashmap for count of char at start pointer
+        // count to iterate = total count        // count to iterate = total count
+
+
