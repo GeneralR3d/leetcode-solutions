@@ -1,0 +1,35 @@
+# 21. Merge Two Sorted Lists
+# Difficulty: Easy
+# URL: https://leetcode.com/problems/merge-two-sorted-lists/submissions/1969327534/
+# Date: 05/04/2026
+
+# ========== Solution A ==========
+# Language: txt
+# Date: 05/04/2026
+
+/**/**
+ * Definition for singly-linked list. * Definition for singly-linked list.
+ * public class ListNode { * public class ListNode {
+ *     int val; *     int val;
+ *     ListNode next; *     ListNode next;
+ *     ListNode() {} *     ListNode() {}
+ *     ListNode(int val) { this.val = val; } *     ListNode(int val) { this.val = val; }
+ *     ListNode(int val, ListNode next) { this.val = val; this.next = next; } *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+ * } * }
+ */ */
+class Solution {class Solution {
+    public ListNode mergeTwoLists(ListNode list1, ListNode list2) {    public ListNode mergeTwoLists(ListNode list1, ListNode list2) {
+
+        ListNode start = new ListNode();        ListNode start = new ListNode();
+        ListNode temp = start;        ListNode temp = start;
+                
+        while(list1 != null || list2 != null){        while(list1 != null || list2 != null){
+            if(list1 != null && list2 != null){            if(list1 != null && list2 != null){
+                int list1value = list1.val;                int list1value = list1.val;
+                int list2value = list2.val;                int list2value = list2.val;
+                if(list1value<=list2value){                if(list1value<=list2value){
+                    temp.next = new ListNode(list1value);                    temp.next = new ListNode(list1value);
+                    list1 = list1.next;                    list1 = list1.next;
+                    temp = temp.next;                    temp = temp.next;
+
+
