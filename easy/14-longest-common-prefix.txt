@@ -1,0 +1,35 @@
+# 14. Longest Common Prefix
+# Difficulty: Easy
+# URL: https://leetcode.com/problems/longest-common-prefix/submissions/1969327226/
+# Date: 05/04/2026
+
+# ========== Solution A ==========
+# Language: txt
+# Date: 05/04/2026
+
+class Solution {class Solution {
+    public String longestCommonPrefix(String[] strs) {    public String longestCommonPrefix(String[] strs) {
+
+        if(strs == null || strs.length == 0) return "";        if(strs == null || strs.length == 0) return "";
+                
+        ArrayList<Character> res = new ArrayList<>();        ArrayList<Character> res = new ArrayList<>();
+
+        //outer loop is which position in each string to check, start with char[0]        //outer loop is which position in each string to check, start with char[0]
+        // only if all the same then add to result        // only if all the same then add to result
+        //only check til the length of first string, if subsequent strings longer theres         //only check til the length of first string, if subsequent strings longer theres 
+no point checkingno point checking
+        for(int i =0;i<strs[0].length();i++){        for(int i =0;i<strs[0].length();i++){
+
+            //take from first string first            //take from first string first
+            //loop starts from first string            //loop starts from first string
+            char targetChar = strs[0].charAt(i);            char targetChar = strs[0].charAt(i);
+            boolean isPrefix = true;            boolean isPrefix = true;
+            //start from second            //start from second
+            for(int j = 1;j<strs.length;j++){            for(int j = 1;j<strs.length;j++){
+
+                // //check for empty string of length 0 first                // //check for empty string of length 0 first
+                // String nowString = strs[j];                // String nowString = strs[j];
+                // if(nowString.length() == 0) continue;                // if(nowString.length() == 0) continue;
+                //not needed                //not needed
+
+
