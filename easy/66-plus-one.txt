@@ -1,0 +1,33 @@
+# 66. Plus One
+# Difficulty: Easy
+# URL: https://leetcode.com/problems/plus-one/description/
+# Date: 05/04/2026
+
+# ========== Solution A ==========
+# Language: txt
+# Date: 05/04/2026
+
+class Solution {class Solution {
+    public int[] plusOne(int[] digits) {    public int[] plusOne(int[] digits) {
+        for (int i = digits.length - 1; i >= 0; i--) {        for (int i = digits.length - 1; i >= 0; i--) {
+            // If the digit is less than 9, just add 1 and we are done!            // If the digit is less than 9, just add 1 and we are done!
+            if (digits[i] < 9) {            if (digits[i] < 9) {
+                digits[i]++;                digits[i]++;
+                return digits;                return digits;
+            }            }
+                        
+            // If it is 9, it becomes 0 and the loop continues (carrying the 1)            // If it is 9, it becomes 0 and the loop continues (carrying the 1)
+            digits[i] = 0;            digits[i] = 0;
+        }        }
+
+        // If we reach here, it means all digits were 9 (e.g., 999 -> 000)        // If we reach here, it means all digits were 9 (e.g., 999 -> 000)
+        // We need an extra 1 at the front (e.g., 1000)        // We need an extra 1 at the front (e.g., 1000)
+        // we only need to create new array if every single digit is 9        // we only need to create new array if every single digit is 9
+        // the new array by default is 0 initialized        // the new array by default is 0 initialized
+        int[] newNumber = new int[digits.length + 1];        int[] newNumber = new int[digits.length + 1];
+        newNumber[0] = 1;        newNumber[0] = 1;
+        return newNumber;        return newNumber;
+    }    }
+}}
+
+
