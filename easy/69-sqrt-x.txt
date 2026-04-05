@@ -1,0 +1,32 @@
+# 69. Sqrt(x)
+# Difficulty: Easy
+# URL: https://leetcode.com/problems/sqrtx/description/
+# Date: 05/04/2026
+
+# ========== Solution A ==========
+# Language: txt
+# Date: 05/04/2026
+
+class Solution {class Solution {
+    public int mySqrt(int x) {    public int mySqrt(int x) {
+        // since x largest is 2^31, its sqaure root is 2^16 max        // since x largest is 2^31, its sqaure root is 2^16 max
+        int start = 0;        int start = 0;
+        int end = x;    // can just use x as largest possible sqrt is its not possible for         int end = x;    // can just use x as largest possible sqrt is its not possible for 
+sqrt to be bigger than xsqrt to be bigger than x
+
+        while(start<=end){        while(start<=end){
+            int mid = start + (end-start)/2;            int mid = start + (end-start)/2;
+            long sq = (long)mid*(long)mid;            long sq = (long)mid*(long)mid;
+            if(sq == (long)x) return mid;            if(sq == (long)x) return mid;
+            else if(sq<x) start = mid +1;            else if(sq<x) start = mid +1;
+            else if(sq>x) end = mid -1;            else if(sq>x) end = mid -1;
+        }        }
+        // same problem as insert search position        // same problem as insert search position
+        // if cannot find, round down means return the left        // if cannot find, round down means return the left
+        return end;        return end;
+
+                
+    }    }
+}}
+
+
