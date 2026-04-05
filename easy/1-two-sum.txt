@@ -1,0 +1,33 @@
+# 1. Two Sum
+# Difficulty: Easy
+# URL: https://leetcode.com/problems/two-sum/submissions/1969326938/
+# Date: 05/04/2026
+
+# ========== Solution A ==========
+# Language: txt
+# Date: 05/04/2026
+
+class Solution {class Solution {
+
+    HashMap<Integer,Integer> partners = new HashMap<>();    HashMap<Integer,Integer> partners = new HashMap<>();
+    public int[] twoSum(int[] nums, int target) {    public int[] twoSum(int[] nums, int target) {
+        for(int i = 0;i< nums.length;i++){        for(int i = 0;i< nums.length;i++){
+            int partner = target - nums[i];            int partner = target - nums[i];
+            if(partners.containsKey(partner)){            if(partners.containsKey(partner)){
+                int partnerIndex = partners.get(partner);                int partnerIndex = partners.get(partner);
+
+                // partnerIndex always came first                // partnerIndex always came first
+                int[] result = {partnerIndex, i};                int[] result = {partnerIndex, i};
+                return result;                return result;
+            }            }
+            else{ //save current            else{ //save current
+                partners.put(nums[i],i);                partners.put(nums[i],i);
+
+            }            }
+        }        }
+
+        return null;        return null;
+    }    }
+}}
+
+
