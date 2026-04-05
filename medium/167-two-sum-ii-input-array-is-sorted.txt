@@ -7,22 +7,53 @@
 # Language: txt
 # Date: 05/04/2026
 
+classÂ SolutionÂ {classÂ SolutionÂ {
+Â Â Â Â publicÂ int[]Â twoSum(int[]Â numbers,Â intÂ target)Â {Â Â Â Â publicÂ int[]Â twoSum(int[]Â numbers,Â intÂ target)Â {
+Â Â Â Â Â Â Â Â HashMap<Integer,Integer>Â mapÂ =Â newÂ HashMap<>();Â Â Â Â Â Â Â Â HashMap<Integer,Integer>Â mapÂ =Â newÂ HashMap<>();
+Â Â Â Â Â Â Â Â for(intÂ iÂ =0;i<numbers.length;i++){Â Â Â Â Â Â Â Â for(intÂ iÂ =0;i<numbers.length;i++){
+Â Â Â Â Â Â Â Â Â Â Â Â intÂ numÂ =Â numbers[i];Â Â Â Â Â Â Â Â Â Â Â Â intÂ numÂ =Â numbers[i];
+Â Â Â Â Â Â Â Â Â Â Â Â if(map.containsKey(num)){Â Â Â Â Â Â Â Â Â Â Â Â if(map.containsKey(num)){
+Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â int[]Â ansÂ =Â {map.get(num)+1,Â i+1};Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â int[]Â ansÂ =Â {map.get(num)+1,Â i+1};
+Â Â Â Â Â Â Â Â Â Â Â Â }Â Â Â Â Â Â Â Â Â Â Â Â }
+Â Â Â Â Â Â Â Â }Â Â Â Â Â Â Â Â }
+Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â returnÂ ans;Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â returnÂ ans;
+Â Â Â Â Â Â Â Â Â Â Â Â else{Â Â Â Â Â Â Â Â Â Â Â Â else{
+Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â map.put(target-numbers[i],i);Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â map.put(target-numbers[i],i);
+Â Â Â Â Â Â Â Â Â Â Â Â }Â Â Â Â Â Â Â Â Â Â Â Â }
+Â Â Â Â }Â Â Â Â }
+Â Â Â Â Â Â Â Â returnÂ newÂ int[2];Â Â Â Â Â Â Â Â returnÂ newÂ int[2];
+Â Â Â Â Â Â Â Â //Â wontÂ reachÂ hereÂ sinceÂ theresÂ oneÂ solutionÂ Â Â Â Â Â Â Â //Â wontÂ reachÂ hereÂ sinceÂ theresÂ oneÂ solution
+}}
+
+
+
+# ========== Solution B ==========
+# Language: txt
+# Date: 05/04/2026
+
 class Solution {class Solution {
     public int[] twoSum(int[] numbers, int target) {    public int[] twoSum(int[] numbers, int target) {
-        HashMap<Integer,Integer> map = new HashMap<>();        HashMap<Integer,Integer> map = new HashMap<>();
-        for(int i =0;i<numbers.length;i++){        for(int i =0;i<numbers.length;i++){
-            int num = numbers[i];            int num = numbers[i];
-            if(map.containsKey(num)){            if(map.containsKey(num)){
-                int[] ans = {map.get(num)+1, i+1};                int[] ans = {map.get(num)+1, i+1};
-            }            }
+        // no need hashmap        // no need hashmap
+        // 2 pointers at both ends        // 2 pointers at both ends
+        // if sum too large, move right pointer down        // if sum too large, move right pointer down
+        // if sum too small, move left pointer up        // if sum too small, move left pointer up
+        // works because array is sorted, if move right pointer u are guaranteed the next         // works because array is sorted, if move right pointer u are guaranteed the next 
+sum is smallersum is smaller
+        // if move left pointer u are guaranteed the next sum is larger        // if move left pointer u are guaranteed the next sum is larger
+        // not guaranteed in normal twosum, u would not know which to move, if move wrong         // not guaranteed in normal twosum, u would not know which to move, if move wrong 
+one u might miss the solutionone u might miss the solution
+        int start = 0;        int start = 0;
+        int end = numbers.length-1;        int end = numbers.length-1;
+
+        while(start<=end){        while(start<=end){
+            int sum = numbers[start] + numbers[end];            int sum = numbers[start] + numbers[end];
         }        }
-                return ans;                return ans;
-            else{            else{
-                map.put(target-numbers[i],i);                map.put(target-numbers[i],i);
+            else if(sum<target) start++;            else if(sum<target) start++;
+            if(sum==target){            if(sum==target){
+                int[] ans = {start+1,end+1};                int[] ans = {start+1,end+1};
             }            }
-    }    }
-        return new int[2];        return new int[2];
-        // wont reach here since theres one solution        // wont reach here since theres one solution
-}}
+            else end--;            else end--;
+
+                return ans;                return ans;
 
 
