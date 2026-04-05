@@ -1,0 +1,35 @@
+# 58. Length of Last Word
+# Difficulty: Easy
+# URL: https://leetcode.com/problems/length-of-last-word/submissions/1969328511/
+# Date: 05/04/2026
+
+# ========== Solution A ==========
+# Language: txt
+# Date: 05/04/2026
+
+class Solution {class Solution {
+    public int lengthOfLastWord(String s) {    public int lengthOfLastWord(String s) {
+        // start from back        // start from back
+        // loop until a non space        // loop until a non space
+        // continue until a space is encountered.        // continue until a space is encountered.
+        for(int i = s.length()-1;i>=0;i--){        for(int i = s.length()-1;i>=0;i--){
+            char current = s.charAt(i);            char current = s.charAt(i);
+            // found a word            // found a word
+            if(current!= ' '){            if(current!= ' '){
+                int count = 0;                int count = 0;
+                int j = i;                int j = i;
+                while(j>=0 && s.charAt(j)!= ' '){                while(j>=0 && s.charAt(j)!= ' '){
+                    count++;                    count++;
+                    j--;                    j--;
+                }                }
+                return count;                return count;
+
+            }            }
+        }        }
+        // useless placeholder since there is always a word meaning it will always enter         // useless placeholder since there is always a word meaning it will always enter 
+the if condition and returnthe if condition and return
+        return 0;        return 0;
+    }    }
+}}
+
+
