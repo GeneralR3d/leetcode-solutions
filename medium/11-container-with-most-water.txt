@@ -1,0 +1,36 @@
+# 11. Container With Most Water
+# Difficulty: Medium
+# URL: https://leetcode.com/problems/container-with-most-water/submissions/1969454352/
+# Date: 05/04/2026
+
+# ========== Solution A ==========
+# Language: txt
+# Date: 05/04/2026
+
+            int h = Math.min(height[left],height[right]);            int h = Math.min(height[left],height[right]);
+            int area = width*h;            int area = width*h;
+            if(area > maxArea) maxArea = area;            if(area > maxArea) maxArea = area;
+
+            // keep moving inwards to terminate the loop            // keep moving inwards to terminate the loop
+            // but if you move the taller stick you risk losing a solution which has huge             // but if you move the taller stick you risk losing a solution which has huge 
+areaarea
+            // moving taller stick has no effect            // moving taller stick has no effect
+            // only move the shorter stick to find an upgrade            // only move the shorter stick to find an upgrade
+            // if move taller stick, area would only reduce, since the min height would             // if move taller stick, area would only reduce, since the min height would 
+not changenot change
+            if(height[left]> height[right]){            if(height[left]> height[right]){
+                right--;                right--;
+            int width = right - left;            int width = right - left;
+        while(left<=right){ // the 2 can meet, it will just have an area of 0        while(left<=right){ // the 2 can meet, it will just have an area of 0
+            }            }
+            else{            else{
+                left++;                left++;
+        int maxArea =0;        int maxArea =0;
+        int right = height.length-1;        int right = height.length-1;
+        int left = 0;        int left = 0;
+        // naiive solution is o(n2), every element with every other        // naiive solution is o(n2), every element with every other
+        // height = min(height right, height left)        // height = min(height right, height left)
+            }            }
+
+
+
