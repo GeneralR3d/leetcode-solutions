@@ -1,0 +1,35 @@
+# 35. Search Insert Position
+# Difficulty: Easy
+# URL: https://leetcode.com/problems/search-insert-position/description/
+# Date: 05/04/2026
+
+# ========== Solution A ==========
+# Language: txt
+# Date: 05/04/2026
+
+class Solution {class Solution {
+    public int searchInsert(int[] nums, int target) {    public int searchInsert(int[] nums, int target) {
+        // binary search        // binary search
+        int left = 0;        int left = 0;
+        int right = nums.length -1;        int right = nums.length -1;
+                
+        while(left<=right){        while(left<=right){
+            // think of it as left + half the length between left and right, thats the mid            // think of it as left + half the length between left and right, thats the mid
+            int mid = left + (right-left)/2;            int mid = left + (right-left)/2;
+            if(nums[mid] == target) return mid;            if(nums[mid] == target) return mid;
+            else if(nums[mid]> target){            else if(nums[mid]> target){
+                //if(mid ==right) return right -1;                //if(mid ==right) return right -1;
+                right = mid-1;                right = mid-1;
+            }            }
+            else{ // mid is smaller than target            else{ // mid is smaller than target
+                //if(mid == left) return left + 1;                //if(mid == left) return left + 1;
+                left = mid+1;                left = mid+1;
+            }            }
+        }        }
+        // when left and right pointers are the same we know we have exhausted        // when left and right pointers are the same we know we have exhausted
+        // Key Takeaway: The left pointer is an "aggressive" explorer. It keeps pushing         // Key Takeaway: The left pointer is an "aggressive" explorer. It keeps pushing 
+forward until it finds a value that isn't smaller than the target. The moment it stops, forward until it finds a value that isn't smaller than the target. The moment it stops, 
+it's standing exactly where the target needs to go. it's standing exactly where the target needs to go. 
+        // so actually here we are using left because we are actually looking for the         // so actually here we are using left because we are actually looking for the 
+
+
