@@ -1,0 +1,34 @@
+# 70. Climbing Stairs
+# Difficulty: Easy
+# URL: https://leetcode.com/problems/climbing-stairs/
+# Date: 05/04/2026
+
+# ========== Solution A ==========
+# Language: txt
+# Date: 05/04/2026
+
+class Solution {class Solution {
+    public int climbStairs(int n) {    public int climbStairs(int n) {
+        // dynamic prog with memoize        // dynamic prog with memoize
+        int[] numOfWays = new int[n+1];        int[] numOfWays = new int[n+1];
+        // when there are 0 steps left, there is 0 new ways to climb it        // when there are 0 steps left, there is 0 new ways to climb it
+        numOfWays[0] = 0;        numOfWays[0] = 0;
+        // when there are 1 steps left, there is 1 new ways to climb it, only take 1 step        // when there are 1 steps left, there is 1 new ways to climb it, only take 1 step
+        numOfWays[1] = 1;        numOfWays[1] = 1;
+        // when there are 2 steps left, there is 2 new ways to climb it, 2*1 steps or take         // when there are 2 steps left, there is 2 new ways to climb it, 2*1 steps or take 
+2 steps2 steps
+        numOfWays[2] = 2;        numOfWays[2] = 2;
+        // when there are 3 steps left, u can take 1 step, which leave you w 2 steps or        // when there are 3 steps left, u can take 1 step, which leave you w 2 steps or
+        return numOfWays[n];        return numOfWays[n];
+        // take 2 steps which leaves you with 1 step        // take 2 steps which leaves you with 1 step
+        for(int i = 3;i<=n;i++){        for(int i = 3;i<=n;i++){
+            numOfWays[i] = numOfWays[i-1] + numOfWays[i-2];            numOfWays[i] = numOfWays[i-1] + numOfWays[i-2];
+        }        }
+    }    }
+
+
+        // guard against small n, n is 1 or 2        // guard against small n, n is 1 or 2
+        if(n<3) return n;        if(n<3) return n;
+}}
+
+
