@@ -1,0 +1,24 @@
+# 139. Word Break
+# Difficulty: Medium
+# URL: https://leetcode.com/problems/word-break/submissions/1971155871/
+# Date: 07/04/2026
+
+# ========== Solution A ==========
+# Language: txt
+# Date: 07/04/2026
+
+class Solution {class Solution {
+    public boolean wordBreak(String s, List<String> wordDict) {    public boolean wordBreak(String s, List<String> wordDict) {
+        // brute force, look at every word in list, see if its a substring of s        // brute force, look at every word in list, see if its a substring of s
+        // recursive, for every word in list, take away that word from s        // recursive, for every word in list, take away that word from s
+        // call function again with smaller s, sub problem        // call function again with smaller s, sub problem
+        // stop condition is when s becomes empty string        // stop condition is when s becomes empty string
+        // for each word in list        // for each word in list
+        // if choose current word: sub problem, kick can down        // if choose current word: sub problem, kick can down
+    }      }  
+        // if dont choose current word: question becomes, can you segment s with remaining         // if dont choose current word: question becomes, can you segment s with remaining 
+wordswords
+                
+}}
+
+
