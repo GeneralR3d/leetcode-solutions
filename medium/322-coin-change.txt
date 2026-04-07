@@ -1,0 +1,34 @@
+# 322. Coin Change
+# Difficulty: Medium
+# URL: https://leetcode.com/problems/coin-change/
+# Date: 07/04/2026
+
+# ========== Solution A ==========
+# Language: txt
+# Date: 07/04/2026
+
+class Solution {class Solution {
+    public int coinChange(int[] coins, int amount) {    public int coinChange(int[] coins, int amount) {
+        // for each coin type        // for each coin type
+        // if amount - cointype >= 0 means current coin can fit        // if amount - cointype >= 0 means current coin can fit
+        // return min of choosing current and not choosing current        // return min of choosing current and not choosing current
+        // if choose current, deduct amount, start from same again        // if choose current, deduct amount, start from same again
+        // if not choose current, move to next coin        // if not choose current, move to next coin
+        int res = coinAmt(coins,0,amount);        int res = coinAmt(coins,0,amount);
+    }    }
+    private int coinAmt(int[] coins, int start, int amount){    private int coinAmt(int[] coins, int start, int amount){
+        for(int i = start;i<coins.length;i++){        for(int i = start;i<coins.length;i++){
+            if(amount - coins[i] >= 0){     //current coin can fit            if(amount - coins[i] >= 0){     //current coin can fit
+                return Math.min(1+coinAmt(coins,start,amount-coins[i]),coinAmt(coins,start                return Math.min(1+coinAmt(coins,start,amount-coins[i]),coinAmt(coins,start
++1, amount));+1, amount));
+            }            }
+            // if cannot fit, move to next coin auto            // if cannot fit, move to next coin auto
+        }        }
+        return 999999; //if no coin can fit        return 999999; //if no coin can fit
+    }    }
+        if(amount == 0) return 0;        if(amount == 0) return 0;
+        if(res >9999) return -1;        if(res >9999) return -1;
+        return res;        return res;
+}}
+
+
