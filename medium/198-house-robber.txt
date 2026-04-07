@@ -7,21 +7,48 @@
 # Language: txt
 # Date: 07/04/2026
 
+classÂ SolutionÂ {classÂ SolutionÂ {
+Â Â Â Â publicÂ intÂ rob(int[]Â nums)Â {Â Â Â Â publicÂ intÂ rob(int[]Â nums)Â {
+Â Â Â Â Â Â Â Â intÂ startÂ =Â 0;Â Â Â Â Â Â Â Â intÂ startÂ =Â 0;
+Â Â Â Â Â Â Â Â intÂ endÂ =Â nums.lengthÂ -1;Â Â Â Â Â Â Â Â intÂ endÂ =Â nums.lengthÂ -1;
+Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â 
+Â Â Â Â }Â Â Â Â }
+Â Â Â Â privateÂ intÂ robMax(int[]Â nums,Â intÂ start,Â intÂ end){Â Â Â Â privateÂ intÂ robMax(int[]Â nums,Â intÂ start,Â intÂ end){
+Â Â Â Â Â Â Â Â if(startÂ ==Â end)Â returnÂ nums[start];Â Â Â Â Â Â Â Â if(startÂ ==Â end)Â returnÂ nums[start];
+Â Â Â Â }Â Â Â Â }
+Â Â Â Â Â Â Â Â returnÂ robMax(nums,start,end);Â Â Â Â Â Â Â Â returnÂ robMax(nums,start,end);
+Â Â Â Â Â Â Â Â elseÂ returnÂ Math.max(nums[start]+robMax(nums,start+2,end),Â robMax(nums,start+1,Â Â Â Â Â Â Â Â elseÂ returnÂ Math.max(nums[start]+robMax(nums,start+2,end),Â robMax(nums,start+1,
+Â Â Â Â Â Â Â Â //Â maxÂ betweenÂ robbingÂ currentÂ andÂ notÂ robbingÂ currentÂ Â Â Â Â Â Â Â //Â maxÂ betweenÂ robbingÂ currentÂ andÂ notÂ robbingÂ current
+Â Â Â Â Â Â Â Â //Â currentÂ beingÂ theÂ firstÂ oneÂ Â Â Â Â Â Â Â //Â currentÂ beingÂ theÂ firstÂ one
+end));end));
+Â Â Â Â Â Â Â Â if(start>end)Â returnÂ 0;Â //Â preventÂ goingÂ outÂ ofÂ boundsÂ Â Â Â Â Â Â Â if(start>end)Â returnÂ 0;Â //Â preventÂ goingÂ outÂ ofÂ bounds
+}}
+
+
+
+# ========== Solution B ==========
+# Language: txt
+# Date: 07/04/2026
+
 class Solution {class Solution {
     public int rob(int[] nums) {    public int rob(int[] nums) {
-        int start = 0;        int start = 0;
-        int end = nums.length -1;        int end = nums.length -1;
+        // only store prev 2        // only store prev 2
+        // if rob current one, look at i-2 + current        // if rob current one, look at i-2 + current
+        // if dont rob current one, look at i-1 only.        // if dont rob current one, look at i-1 only.
+        int prev = 0;        int prev = 0;
                 
     }    }
-    private int robMax(int[] nums, int start, int end){    private int robMax(int[] nums, int start, int end){
-        if(start == end) return nums[start];        if(start == end) return nums[start];
-    }    }
-        return robMax(nums,start,end);        return robMax(nums,start,end);
-        else return Math.max(nums[start]+robMax(nums,start+2,end), robMax(nums,start+1,        else return Math.max(nums[start]+robMax(nums,start+2,end), robMax(nums,start+1,
-        // max between robbing current and not robbing current        // max between robbing current and not robbing current
-        // current being the first one        // current being the first one
-end));end));
-        if(start>end) return 0; // prevent going out of bounds        if(start>end) return 0; // prevent going out of bounds
+        int prevprev = 0;        int prevprev = 0;
+        for (int i=0;i<nums.length;i++){        for (int i=0;i<nums.length;i++){
+            int currentMax = Math.max(nums[i]+prevprev,prev);            int currentMax = Math.max(nums[i]+prevprev,prev);
+        }        }
+            // max of robbing current and not robbing current            // max of robbing current and not robbing current
+
+                        
+
+            prevprev = prev;            prevprev = prev;
+            prev = currentMax;            prev = currentMax;
+        return prev;        return prev;
 }}
 
 
