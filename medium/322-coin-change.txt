@@ -7,28 +7,28 @@
 # Language: txt
 # Date: 07/04/2026
 
-classÂ SolutionÂ {classÂ SolutionÂ {
-Â Â Â Â publicÂ intÂ coinChange(int[]Â coins,Â intÂ amount)Â {Â Â Â Â publicÂ intÂ coinChange(int[]Â coins,Â intÂ amount)Â {
-Â Â Â Â Â Â Â Â //Â forÂ eachÂ coinÂ typeÂ Â Â Â Â Â Â Â //Â forÂ eachÂ coinÂ type
-Â Â Â Â Â Â Â Â //Â ifÂ amountÂ -Â cointypeÂ >=Â 0Â meansÂ currentÂ coinÂ canÂ fitÂ Â Â Â Â Â Â Â //Â ifÂ amountÂ -Â cointypeÂ >=Â 0Â meansÂ currentÂ coinÂ canÂ fit
-Â Â Â Â Â Â Â Â //Â returnÂ minÂ ofÂ choosingÂ currentÂ andÂ notÂ choosingÂ currentÂ Â Â Â Â Â Â Â //Â returnÂ minÂ ofÂ choosingÂ currentÂ andÂ notÂ choosingÂ current
-Â Â Â Â Â Â Â Â //Â ifÂ chooseÂ current,Â deductÂ amount,Â startÂ fromÂ sameÂ againÂ Â Â Â Â Â Â Â //Â ifÂ chooseÂ current,Â deductÂ amount,Â startÂ fromÂ sameÂ again
-Â Â Â Â Â Â Â Â //Â ifÂ notÂ chooseÂ current,Â moveÂ toÂ nextÂ coinÂ Â Â Â Â Â Â Â //Â ifÂ notÂ chooseÂ current,Â moveÂ toÂ nextÂ coin
-Â Â Â Â Â Â Â Â intÂ resÂ =Â coinAmt(coins,0,amount);Â Â Â Â Â Â Â Â intÂ resÂ =Â coinAmt(coins,0,amount);
-Â Â Â Â }Â Â Â Â }
-Â Â Â Â privateÂ intÂ coinAmt(int[]Â coins,Â intÂ start,Â intÂ amount){Â Â Â Â privateÂ intÂ coinAmt(int[]Â coins,Â intÂ start,Â intÂ amount){
-Â Â Â Â Â Â Â Â for(intÂ iÂ =Â start;i<coins.length;i++){Â Â Â Â Â Â Â Â for(intÂ iÂ =Â start;i<coins.length;i++){
-Â Â Â Â Â Â Â Â Â Â Â Â if(amountÂ -Â coins[i]Â >=Â 0){Â Â Â Â Â //currentÂ coinÂ canÂ fitÂ Â Â Â Â Â Â Â Â Â Â Â if(amountÂ -Â coins[i]Â >=Â 0){Â Â Â Â Â //currentÂ coinÂ canÂ fit
-Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â returnÂ Math.min(1+coinAmt(coins,start,amount-coins[i]),coinAmt(coins,startÂ Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â returnÂ Math.min(1+coinAmt(coins,start,amount-coins[i]),coinAmt(coins,start
-+1,Â amount));+1,Â amount));
-Â Â Â Â Â Â Â Â Â Â Â Â }Â Â Â Â Â Â Â Â Â Â Â Â }
-Â Â Â Â Â Â Â Â Â Â Â Â //Â ifÂ cannotÂ fit,Â moveÂ toÂ nextÂ coinÂ autoÂ Â Â Â Â Â Â Â Â Â Â Â //Â ifÂ cannotÂ fit,Â moveÂ toÂ nextÂ coinÂ auto
-Â Â Â Â Â Â Â Â }Â Â Â Â Â Â Â Â }
-Â Â Â Â Â Â Â Â returnÂ 999999;Â //ifÂ noÂ coinÂ canÂ fitÂ Â Â Â Â Â Â Â returnÂ 999999;Â //ifÂ noÂ coinÂ canÂ fit
-Â Â Â Â }Â Â Â Â }
-Â Â Â Â Â Â Â Â if(amountÂ ==Â 0)Â returnÂ 0;Â Â Â Â Â Â Â Â if(amountÂ ==Â 0)Â returnÂ 0;
-Â Â Â Â Â Â Â Â if(resÂ >9999)Â returnÂ -1;Â Â Â Â Â Â Â Â if(resÂ >9999)Â returnÂ -1;
-Â Â Â Â Â Â Â Â returnÂ res;Â Â Â Â Â Â Â Â returnÂ res;
+classÃÂ SolutionÃÂ {classÃÂ SolutionÃÂ {
+ÃÂ ÃÂ ÃÂ ÃÂ publicÃÂ intÃÂ coinChange(int[]ÃÂ coins,ÃÂ intÃÂ amount)ÃÂ {ÃÂ ÃÂ ÃÂ ÃÂ publicÃÂ intÃÂ coinChange(int[]ÃÂ coins,ÃÂ intÃÂ amount)ÃÂ {
+ÃÂ ÃÂ ÃÂ ÃÂ ÃÂ ÃÂ ÃÂ ÃÂ //ÃÂ forÃÂ eachÃÂ coinÃÂ typeÃÂ ÃÂ ÃÂ ÃÂ ÃÂ ÃÂ ÃÂ ÃÂ //ÃÂ forÃÂ eachÃÂ coinÃÂ type
+ÃÂ ÃÂ ÃÂ ÃÂ ÃÂ ÃÂ ÃÂ ÃÂ //ÃÂ ifÃÂ amountÃÂ -ÃÂ cointypeÃÂ >=ÃÂ 0ÃÂ meansÃÂ currentÃÂ coinÃÂ canÃÂ fitÃÂ ÃÂ ÃÂ ÃÂ ÃÂ ÃÂ ÃÂ ÃÂ //ÃÂ ifÃÂ amountÃÂ -ÃÂ cointypeÃÂ >=ÃÂ 0ÃÂ meansÃÂ currentÃÂ coinÃÂ canÃÂ fit
+ÃÂ ÃÂ ÃÂ ÃÂ ÃÂ ÃÂ ÃÂ ÃÂ //ÃÂ returnÃÂ minÃÂ ofÃÂ choosingÃÂ currentÃÂ andÃÂ notÃÂ choosingÃÂ currentÃÂ ÃÂ ÃÂ ÃÂ ÃÂ ÃÂ ÃÂ ÃÂ //ÃÂ returnÃÂ minÃÂ ofÃÂ choosingÃÂ currentÃÂ andÃÂ notÃÂ choosingÃÂ current
+ÃÂ ÃÂ ÃÂ ÃÂ ÃÂ ÃÂ ÃÂ ÃÂ //ÃÂ ifÃÂ chooseÃÂ current,ÃÂ deductÃÂ amount,ÃÂ startÃÂ fromÃÂ sameÃÂ againÃÂ ÃÂ ÃÂ ÃÂ ÃÂ ÃÂ ÃÂ ÃÂ //ÃÂ ifÃÂ chooseÃÂ current,ÃÂ deductÃÂ amount,ÃÂ startÃÂ fromÃÂ sameÃÂ again
+ÃÂ ÃÂ ÃÂ ÃÂ ÃÂ ÃÂ ÃÂ ÃÂ //ÃÂ ifÃÂ notÃÂ chooseÃÂ current,ÃÂ moveÃÂ toÃÂ nextÃÂ coinÃÂ ÃÂ ÃÂ ÃÂ ÃÂ ÃÂ ÃÂ ÃÂ //ÃÂ ifÃÂ notÃÂ chooseÃÂ current,ÃÂ moveÃÂ toÃÂ nextÃÂ coin
+ÃÂ ÃÂ ÃÂ ÃÂ ÃÂ ÃÂ ÃÂ ÃÂ intÃÂ resÃÂ =ÃÂ coinAmt(coins,0,amount);ÃÂ ÃÂ ÃÂ ÃÂ ÃÂ ÃÂ ÃÂ ÃÂ intÃÂ resÃÂ =ÃÂ coinAmt(coins,0,amount);
+ÃÂ ÃÂ ÃÂ ÃÂ }ÃÂ ÃÂ ÃÂ ÃÂ }
+ÃÂ ÃÂ ÃÂ ÃÂ privateÃÂ intÃÂ coinAmt(int[]ÃÂ coins,ÃÂ intÃÂ start,ÃÂ intÃÂ amount){ÃÂ ÃÂ ÃÂ ÃÂ privateÃÂ intÃÂ coinAmt(int[]ÃÂ coins,ÃÂ intÃÂ start,ÃÂ intÃÂ amount){
+ÃÂ ÃÂ ÃÂ ÃÂ ÃÂ ÃÂ ÃÂ ÃÂ for(intÃÂ iÃÂ =ÃÂ start;i<coins.length;i++){ÃÂ ÃÂ ÃÂ ÃÂ ÃÂ ÃÂ ÃÂ ÃÂ for(intÃÂ iÃÂ =ÃÂ start;i<coins.length;i++){
+ÃÂ ÃÂ ÃÂ ÃÂ ÃÂ ÃÂ ÃÂ ÃÂ ÃÂ ÃÂ ÃÂ ÃÂ if(amountÃÂ -ÃÂ coins[i]ÃÂ >=ÃÂ 0){ÃÂ ÃÂ ÃÂ ÃÂ ÃÂ //currentÃÂ coinÃÂ canÃÂ fitÃÂ ÃÂ ÃÂ ÃÂ ÃÂ ÃÂ ÃÂ ÃÂ ÃÂ ÃÂ ÃÂ ÃÂ if(amountÃÂ -ÃÂ coins[i]ÃÂ >=ÃÂ 0){ÃÂ ÃÂ ÃÂ ÃÂ ÃÂ //currentÃÂ coinÃÂ canÃÂ fit
+ÃÂ ÃÂ ÃÂ ÃÂ ÃÂ ÃÂ ÃÂ ÃÂ ÃÂ ÃÂ ÃÂ ÃÂ ÃÂ ÃÂ ÃÂ ÃÂ returnÃÂ Math.min(1+coinAmt(coins,start,amount-coins[i]),coinAmt(coins,startÃÂ ÃÂ ÃÂ ÃÂ ÃÂ ÃÂ ÃÂ ÃÂ ÃÂ ÃÂ ÃÂ ÃÂ ÃÂ ÃÂ ÃÂ ÃÂ returnÃÂ Math.min(1+coinAmt(coins,start,amount-coins[i]),coinAmt(coins,start
++1,ÃÂ amount));+1,ÃÂ amount));
+ÃÂ ÃÂ ÃÂ ÃÂ ÃÂ ÃÂ ÃÂ ÃÂ ÃÂ ÃÂ ÃÂ ÃÂ }ÃÂ ÃÂ ÃÂ ÃÂ ÃÂ ÃÂ ÃÂ ÃÂ ÃÂ ÃÂ ÃÂ ÃÂ }
+ÃÂ ÃÂ ÃÂ ÃÂ ÃÂ ÃÂ ÃÂ ÃÂ ÃÂ ÃÂ ÃÂ ÃÂ //ÃÂ ifÃÂ cannotÃÂ fit,ÃÂ moveÃÂ toÃÂ nextÃÂ coinÃÂ autoÃÂ ÃÂ ÃÂ ÃÂ ÃÂ ÃÂ ÃÂ ÃÂ ÃÂ ÃÂ ÃÂ ÃÂ //ÃÂ ifÃÂ cannotÃÂ fit,ÃÂ moveÃÂ toÃÂ nextÃÂ coinÃÂ auto
+ÃÂ ÃÂ ÃÂ ÃÂ ÃÂ ÃÂ ÃÂ ÃÂ }ÃÂ ÃÂ ÃÂ ÃÂ ÃÂ ÃÂ ÃÂ ÃÂ }
+ÃÂ ÃÂ ÃÂ ÃÂ ÃÂ ÃÂ ÃÂ ÃÂ returnÃÂ 999999;ÃÂ //ifÃÂ noÃÂ coinÃÂ canÃÂ fitÃÂ ÃÂ ÃÂ ÃÂ ÃÂ ÃÂ ÃÂ ÃÂ returnÃÂ 999999;ÃÂ //ifÃÂ noÃÂ coinÃÂ canÃÂ fit
+ÃÂ ÃÂ ÃÂ ÃÂ }ÃÂ ÃÂ ÃÂ ÃÂ }
+ÃÂ ÃÂ ÃÂ ÃÂ ÃÂ ÃÂ ÃÂ ÃÂ if(amountÃÂ ==ÃÂ 0)ÃÂ returnÃÂ 0;ÃÂ ÃÂ ÃÂ ÃÂ ÃÂ ÃÂ ÃÂ ÃÂ if(amountÃÂ ==ÃÂ 0)ÃÂ returnÃÂ 0;
+ÃÂ ÃÂ ÃÂ ÃÂ ÃÂ ÃÂ ÃÂ ÃÂ if(resÃÂ >9999)ÃÂ returnÃÂ -1;ÃÂ ÃÂ ÃÂ ÃÂ ÃÂ ÃÂ ÃÂ ÃÂ if(resÃÂ >9999)ÃÂ returnÃÂ -1;
+ÃÂ ÃÂ ÃÂ ÃÂ ÃÂ ÃÂ ÃÂ ÃÂ returnÃÂ res;ÃÂ ÃÂ ÃÂ ÃÂ ÃÂ ÃÂ ÃÂ ÃÂ returnÃÂ res;
 }}
 
 
@@ -37,29 +37,59 @@ classÂ SolutionÂ {classÂ SolutionÂ {
 # Language: txt
 # Date: 07/04/2026
 
-        int res = coinAmt(coins,0,amount,map);        int res = coinAmt(coins,0,amount,map);
+Â Â Â Â Â Â Â Â intÂ resÂ =Â coinAmt(coins,0,amount,map);Â Â Â Â Â Â Â Â intÂ resÂ =Â coinAmt(coins,0,amount,map);
+Â Â Â Â }Â Â Â Â }
+Â Â Â Â privateÂ intÂ coinAmt(int[]Â coins,Â intÂ start,Â intÂ amount,Â HashMap<Integer,Integer>Â map){Â Â Â Â privateÂ intÂ coinAmt(int[]Â coins,Â intÂ start,Â intÂ amount,Â HashMap<Integer,Integer>Â map){
+Â Â Â Â Â Â Â Â for(intÂ iÂ =Â start;i<coins.length;i++){Â Â Â Â Â Â Â Â for(intÂ iÂ =Â start;i<coins.length;i++){
+Â Â Â Â Â Â Â Â Â Â Â Â if(amountÂ -Â coins[i]Â >=Â 0){Â Â Â Â Â //currentÂ coinÂ canÂ fitÂ Â Â Â Â Â Â Â Â Â Â Â if(amountÂ -Â coins[i]Â >=Â 0){Â Â Â Â Â //currentÂ coinÂ canÂ fit
+Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â intÂ minCoinsÂ =Â Math.min(1+coinAmt(coins,start,amount-coins[i],map),coinAmtÂ Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â intÂ minCoinsÂ =Â Math.min(1+coinAmt(coins,start,amount-coins[i],map),coinAmt
+(coins,start+1,Â amount,map));(coins,start+1,Â amount,map));
+Â Â Â Â Â Â Â Â if(amountÂ ==Â 0)Â returnÂ 0;Â Â Â Â Â Â Â Â if(amountÂ ==Â 0)Â returnÂ 0;
+Â Â Â Â Â Â Â Â if(resÂ >9999)Â returnÂ -1;Â Â Â Â Â Â Â Â if(resÂ >9999)Â returnÂ -1;
+Â Â Â Â Â Â Â Â returnÂ res;Â Â Â Â Â Â Â Â returnÂ res;
+Â Â Â Â Â Â Â Â //Â addÂ memoizationÂ Â Â Â Â Â Â Â //Â addÂ memoization
+Â Â Â Â Â Â Â Â HashMap<Integer,Integer>Â mapÂ =Â newÂ HashMap<>();Â Â Â Â Â Â Â Â HashMap<Integer,Integer>Â mapÂ =Â newÂ HashMap<>();
+Â Â Â Â Â Â Â Â if(map.containsKey(amount))Â returnÂ map.get(amount);Â Â Â Â Â Â Â Â if(map.containsKey(amount))Â returnÂ map.get(amount);
+
+Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â map.put(amount,minCoins);Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â map.put(amount,minCoins);
+Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â returnÂ minCoins;Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â returnÂ minCoins;
+
+Â Â Â Â Â Â Â Â //Â ifÂ notÂ chooseÂ current,Â moveÂ toÂ nextÂ coinÂ Â Â Â Â Â Â Â //Â ifÂ notÂ chooseÂ current,Â moveÂ toÂ nextÂ coin
+Â Â Â Â Â Â Â Â //Â ifÂ chooseÂ current,Â deductÂ amount,Â startÂ fromÂ sameÂ againÂ Â Â Â Â Â Â Â //Â ifÂ chooseÂ current,Â deductÂ amount,Â startÂ fromÂ sameÂ again
+Â Â Â Â Â Â Â Â //Â returnÂ minÂ ofÂ choosingÂ currentÂ andÂ notÂ choosingÂ currentÂ Â Â Â Â Â Â Â //Â returnÂ minÂ ofÂ choosingÂ currentÂ andÂ notÂ choosingÂ current
+Â Â Â Â Â Â Â Â //Â ifÂ amountÂ -Â cointypeÂ >=Â 0Â meansÂ currentÂ coinÂ canÂ fitÂ Â Â Â Â Â Â Â //Â ifÂ amountÂ -Â cointypeÂ >=Â 0Â meansÂ currentÂ coinÂ canÂ fit
+Â Â Â Â Â Â Â Â //Â forÂ eachÂ coinÂ typeÂ Â Â Â Â Â Â Â //Â forÂ eachÂ coinÂ type
+Â Â Â Â publicÂ intÂ coinChange(int[]Â coins,Â intÂ amount)Â {Â Â Â Â publicÂ intÂ coinChange(int[]Â coins,Â intÂ amount)Â {
+classÂ SolutionÂ {classÂ SolutionÂ {
+
+
+
+# ========== Solution C ==========
+# Language: txt
+# Date: 07/04/2026
+
+        int res = coinAmt(coins,amount,map);        int res = coinAmt(coins,amount,map);
     }    }
-    private int coinAmt(int[] coins, int start, int amount, HashMap<Integer,Integer> map){    private int coinAmt(int[] coins, int start, int amount, HashMap<Integer,Integer> map){
-        for(int i = start;i<coins.length;i++){        for(int i = start;i<coins.length;i++){
+    private int coinAmt(int[] coins, int amount, HashMap<Integer,Integer> map){    private int coinAmt(int[] coins, int amount, HashMap<Integer,Integer> map){
+        for(int i = 0;i<coins.length;i++){        for(int i = 0;i<coins.length;i++){
             if(amount - coins[i] >= 0){     //current coin can fit            if(amount - coins[i] >= 0){     //current coin can fit
-                int minCoins = Math.min(1+coinAmt(coins,start,amount-coins[i],map),coinAmt                int minCoins = Math.min(1+coinAmt(coins,start,amount-coins[i],map),coinAmt
-(coins,start+1, amount,map));(coins,start+1, amount,map));
+                int res = 1+ coinAmt(coins,amount-coins[i],map);                int res = 1+ coinAmt(coins,amount-coins[i],map);
         if(amount == 0) return 0;        if(amount == 0) return 0;
         if(res >9999) return -1;        if(res >9999) return -1;
         return res;        return res;
-        // add memoization        // add memoization
         HashMap<Integer,Integer> map = new HashMap<>();        HashMap<Integer,Integer> map = new HashMap<>();
         if(map.containsKey(amount)) return map.get(amount);        if(map.containsKey(amount)) return map.get(amount);
 
-                map.put(amount,minCoins);                map.put(amount,minCoins);
-                return minCoins;                return minCoins;
+                minCoins = Math.min(res,minCoins);                minCoins = Math.min(res,minCoins);
+        // add memoization        // add memoization
 
-        // if not choose current, move to next coin        // if not choose current, move to next coin
-        // if choose current, deduct amount, start from same again        // if choose current, deduct amount, start from same again
-        // return min of choosing current and not choosing current        // return min of choosing current and not choosing current
-        // if amount - cointype >= 0 means current coin can fit        // if amount - cointype >= 0 means current coin can fit
-        // for each coin type        // for each coin type
-    public int coinChange(int[] coins, int amount) {    public int coinChange(int[] coins, int amount) {
-class Solution {class Solution {
+            }            }
+            // if cannot fit, move to next coin auto            // if cannot fit, move to next coin auto
+        }        }
+        return minCoins; //if no coin can fit        return minCoins; //if no coin can fit
+        int minCoins = 99999;        int minCoins = 99999;
+    }    }
+        map.put(amount,minCoins);        map.put(amount,minCoins);
+}}
 
 
