@@ -7,29 +7,61 @@
 # Language: txt
 # Date: 05/04/2026
 
-class Solution {class Solution {
-    ArrayList<String> result = new ArrayList<>();    ArrayList<String> result = new ArrayList<>();
-    int openCount = 0;    int openCount = 0;
-    int closeCount = 0;    int closeCount = 0;
-    public List<String> generateParenthesis(int n) {    public List<String> generateParenthesis(int n) {
-        // if open < n, add open        // if open < n, add open
-        // if close < n AND close < open, add close        // if close < n AND close < open, add close
-        // if close == open AND open == n, return        // if close == open AND open == n, return
-        backTrack(0,0,"",n);        backTrack(0,0,"",n);
-        return result;        return result;
+classÂ SolutionÂ {classÂ SolutionÂ {
+Â Â Â Â ArrayList<String>Â resultÂ =Â newÂ ArrayList<>();Â Â Â Â ArrayList<String>Â resultÂ =Â newÂ ArrayList<>();
+Â Â Â Â intÂ openCountÂ =Â 0;Â Â Â Â intÂ openCountÂ =Â 0;
+Â Â Â Â intÂ closeCountÂ =Â 0;Â Â Â Â intÂ closeCountÂ =Â 0;
+Â Â Â Â publicÂ List<String>Â generateParenthesis(intÂ n)Â {Â Â Â Â publicÂ List<String>Â generateParenthesis(intÂ n)Â {
+Â Â Â Â Â Â Â Â //Â ifÂ openÂ <Â n,Â addÂ openÂ Â Â Â Â Â Â Â //Â ifÂ openÂ <Â n,Â addÂ open
+Â Â Â Â Â Â Â Â //Â ifÂ closeÂ <Â nÂ ANDÂ closeÂ <Â open,Â addÂ closeÂ Â Â Â Â Â Â Â //Â ifÂ closeÂ <Â nÂ ANDÂ closeÂ <Â open,Â addÂ close
+Â Â Â Â Â Â Â Â //Â ifÂ closeÂ ==Â openÂ ANDÂ openÂ ==Â n,Â returnÂ Â Â Â Â Â Â Â //Â ifÂ closeÂ ==Â openÂ ANDÂ openÂ ==Â n,Â return
+Â Â Â Â Â Â Â Â backTrack(0,0,"",n);Â Â Â Â Â Â Â Â backTrack(0,0,"",n);
+Â Â Â Â Â Â Â Â returnÂ result;Â Â Â Â Â Â Â Â returnÂ result;
+
+Â Â Â Â }Â Â Â Â }
+Â Â Â Â privateÂ voidÂ backTrack(intÂ openCount,Â intÂ closeCount,Â StringÂ ans,intÂ n){Â Â Â Â privateÂ voidÂ backTrack(intÂ openCount,Â intÂ closeCount,Â StringÂ ans,intÂ n){
+Â Â Â Â Â Â Â Â if(openCountÂ ==Â closeCountÂ &&Â openCountÂ ==Â n){Â Â Â Â Â Â Â Â if(openCountÂ ==Â closeCountÂ &&Â openCountÂ ==Â n){
+Â Â Â Â Â Â Â Â Â Â Â Â result.add(ans);Â Â Â Â Â Â Â Â Â Â Â Â result.add(ans);
+Â Â Â Â Â Â Â Â Â Â Â Â return;Â Â Â Â Â Â Â Â Â Â Â Â return;
+Â Â Â Â Â Â Â Â }Â Â Â Â Â Â Â Â }
+
+Â Â Â Â Â Â Â Â if(closeCountÂ <Â openCountÂ &&Â closeCountÂ <Â n){Â Â Â Â Â Â Â Â if(closeCountÂ <Â openCountÂ &&Â closeCountÂ <Â n){
+Â Â Â Â Â Â Â Â Â Â Â Â backTrack(openCount,Â closeCount+1,ans+Â ')',n);Â Â Â Â Â Â Â Â Â Â Â Â backTrack(openCount,Â closeCount+1,ans+Â ')',n);
+
+Â Â Â Â Â Â Â Â }Â Â Â Â Â Â Â Â }
+
+Â Â Â Â Â Â Â Â if(openCount<Â n){Â Â Â Â Â Â Â Â if(openCount<Â n){
+
+
+
+# ========== Solution B ==========
+# Language: txt
+# Date: 15/04/2026
+
+        if(open< n){        if(open< n){
+            working.add('(');            working.add('(');
+            backtrack(working,open+1,close,n);            backtrack(working,open+1,close,n);
+        }        }
+            this.res.add(str);            this.res.add(str);
+            return;            return;
+            StringBuilder sb = new StringBuilder(working.size());            StringBuilder sb = new StringBuilder(working.size());
+            for(char c:working) sb.append(c);            for(char c:working) sb.append(c);
+            String str = sb.toString();            String str = sb.toString();
+            working.removeLast();            working.removeLast();
+        }        }
+        if(close< n && close < open){        if(close< n && close < open){
+            working.add(')');            working.add(')');
+            backtrack(working,open,close+1,n);            backtrack(working,open,close+1,n);
+            working.removeLast();            working.removeLast();
+
+        }        }
+                
 
     }    }
-    private void backTrack(int openCount, int closeCount, String ans,int n){    private void backTrack(int openCount, int closeCount, String ans,int n){
-        if(openCount == closeCount && openCount == n){        if(openCount == closeCount && openCount == n){
-            result.add(ans);            result.add(ans);
-            return;            return;
-        }        }
+        if(open == n && close == n){        if(open == n && close == n){
 
-        if(closeCount < openCount && closeCount < n){        if(closeCount < openCount && closeCount < n){
-            backTrack(openCount, closeCount+1,ans+ ')',n);            backTrack(openCount, closeCount+1,ans+ ')',n);
-
-        }        }
-
-        if(openCount< n){        if(openCount< n){
+    private void backtrack(ArrayList<Character> working, int open, int close, int n){    private void backtrack(ArrayList<Character> working, int open, int close, int n){
+    }    }
+                
 
 
