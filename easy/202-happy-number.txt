@@ -1,0 +1,32 @@
+# 202. Happy Number
+# Difficulty: Easy
+# URL: https://leetcode.com/problems/happy-number/submissions/1979072332/
+# Date: 15/04/2026
+
+# ========== Solution A ==========
+# Language: txt
+# Date: 15/04/2026
+
+class Solution {class Solution {
+    public boolean isHappy(int n) {    public boolean isHappy(int n) {
+        HashSet<Integer> set = new HashSet<>();        HashSet<Integer> set = new HashSet<>();
+    }    }
+    private int convert(int n){    private int convert(int n){
+        while(n>0){        while(n>0){
+            int digit = n % 10;            int digit = n % 10;
+        }        }
+        int sum = 0;        int sum = 0;
+            n = n/10;            n = n/10;
+            sum += (digit * digit);            sum += (digit * digit);
+        return sum;        return sum;
+        if (n ==1) return true;        if (n ==1) return true;
+        while(n!=1){        while(n!=1){
+            n = convert(n);            n = convert(n);
+        }        }
+    }    }
+            if(set.contains(n)) return false;            if(set.contains(n)) return false;
+            else set.add(n);            else set.add(n);
+        return true;        return true;
+}}
+
+
