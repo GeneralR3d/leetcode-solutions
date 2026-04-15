@@ -1,0 +1,33 @@
+# 46. Permutations
+# Difficulty: Medium
+# URL: https://leetcode.com/problems/permutations/submissions/1979313908/
+# Date: 15/04/2026
+
+# ========== Solution A ==========
+# Language: txt
+# Date: 15/04/2026
+
+class Solution {class Solution {
+    List<List<Integer>> res = new ArrayList<>();    List<List<Integer>> res = new ArrayList<>();
+    public List<List<Integer>> permute(int[] nums) {    public List<List<Integer>> permute(int[] nums) {
+        ArrayList<Integer> working = new ArrayList<>();        ArrayList<Integer> working = new ArrayList<>();
+        int LEN = nums.length;        int LEN = nums.length;
+    }    }
+    private void backtrack(int[]nums, ArrayList<Integer> working, int n, int LEN){    private void backtrack(int[]nums, ArrayList<Integer> working, int n, int LEN){
+        if(n == LEN){        if(n == LEN){
+            this.res.add(new ArrayList<Integer>(working));            this.res.add(new ArrayList<Integer>(working));
+        }        }
+            return;            return;
+        for(int i = 0;i<nums.length;i++){        for(int i = 0;i<nums.length;i++){
+            int num = nums[i];            int num = nums[i];
+        }        }
+    }       }   
+            working.add(num);            working.add(num);
+            backtrack(nums,working,n+1,LEN);            backtrack(nums,working,n+1,LEN);
+            working.removeLast();            working.removeLast();
+        backtrack(nums,working,0,LEN);        backtrack(nums,working,0,LEN);
+        return this.res;        return this.res;
+            if (working.contains(num)) continue;            if (working.contains(num)) continue;
+}}
+
+
