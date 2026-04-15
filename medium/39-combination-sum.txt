@@ -1,0 +1,36 @@
+# 39. Combination Sum
+# Difficulty: Medium
+# URL: https://leetcode.com/problems/combination-sum/submissions/1979135118/
+# Date: 15/04/2026
+
+# ========== Solution A ==========
+# Language: txt
+# Date: 15/04/2026
+
+     private void backtrack(int[] candidates,ArrayList<Integer> working,int start, int      private void backtrack(int[] candidates,ArrayList<Integer> working,int start, int 
+        if(sum == target){        if(sum == target){
+            this.res.add(new ArrayList<Integer>(working));            this.res.add(new ArrayList<Integer>(working));
+        }        }
+            return;            return;
+        else if (sum > target){        else if (sum > target){
+        }        }
+        else{   //try everything        else{   //try everything
+            for(int i =start;i<candidates.length;i++){            for(int i =start;i<candidates.length;i++){
+            return;            return;
+sum, int target){sum, int target){
+    // need start index, each time explore should not start from first element of array     // need start index, each time explore should not start from first element of array 
+but to only consider everything forward. Starting from very first element of array creates but to only consider everything forward. Starting from very first element of array creates 
+duplicatesduplicates
+    // In 2 loop, choose 2,3,6,7    // In 2 loop, choose 2,3,6,7
+    //In 3 loop, choose 2,3,6,7    //In 3 loop, choose 2,3,6,7
+    // The (2,3) and (3,2) are duplicates    // The (2,3) and (3,2) are duplicates
+                working.add(candidates[i]);                working.add(candidates[i]);
+                backtrack(candidates,working,i,sum+candidates[i],target);                backtrack(candidates,working,i,sum+candidates[i],target);
+                working.removeLast();                working.removeLast();
+                                
+            }            }
+        }        }
+    }    }
+}}
+
+
